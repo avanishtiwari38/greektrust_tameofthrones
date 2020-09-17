@@ -57,7 +57,10 @@ def readInput():
 		    		readData[kingdom_text[0]] = kingdom_text[1]
 
 		data = check_msg(readData)
-		return " ".join(data)
+		if not data:
+			return None
+		else:
+			return " ".join(data)
 
 	except FileNotFoundError as e:
 		return "No such file or directory: 'xyz.txt'"
